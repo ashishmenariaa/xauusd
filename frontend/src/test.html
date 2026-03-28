@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>XAU/USD AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+    <style>
+        body { background: #0a0b0f; color: white; font-family: Arial; margin: 0; padding: 20px; }
+        .header { background: #12141a; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .price-bar { background: #12141a; padding: 15px; border-radius: 10px; margin-bottom: 20px; display: flex; gap: 20px; }
+        .tabs { background: #12141a; padding: 10px; border-radius: 10px; margin-bottom: 20px; display: flex; gap: 10px; }
+        .tab { padding: 10px 20px; background: #1e212b; border-radius: 5px; cursor: pointer; }
+        .panel { background: #12141a; padding: 20px; border-radius: 10px; min-height: 400px; }
+    </style>
+</head>
+<body>
+    <!-- Basic Header -->
+    <div class="header">
+        <h1>XAU/USD AI Dashboard</h1>
+        <p>Server is running on port 3000</p>
+    </div>
+    
+    <!-- Basic Price Bar -->
+    <div class="price-bar">
+        <div>Price: 4441.50</div>
+        <div>Change: +5.20</div>
+        <div>High: 4445.00</div>
+        <div>Low: 4435.00</div>
+    </div>
+    
+    <!-- Basic Tabs -->
+    <div class="tabs">
+        <div class="tab">Signal</div>
+        <div class="tab">Chart</div>
+        <div class="tab">Journal</div>
+        <div class="tab">MT5</div>
+    </div>
+    
+    <!-- Basic Panel -->
+    <div class="panel">
+        <h2>Signal Panel</h2>
+        <p>Scanner Status: Stopped</p>
+        <button>Start Scanner</button>
+    </div>
+    
+    <script>
+        console.log("Basic HTML loaded successfully!");
+        
+        // Test API connection
+        fetch('/api/health')
+            .then(response => response.json())
+            .then(data => console.log('API Health:', data))
+            .catch(error => console.error('API Error:', error));
+    </script>
+</body>
+</html>
